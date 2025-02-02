@@ -9,7 +9,6 @@ const WelcomeUI = () => {
   const [error, setError] = useState('');
   const [selectedOptions, setSelectedOptions] = useState([]);
 
-  // Listen for window resize events.
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener('resize', handleResize);
@@ -18,7 +17,6 @@ const WelcomeUI = () => {
 
   const isMobile = windowWidth < 768;
 
-  // Navigation icons (same as income page).
   const navIcons = {
     Welcome: (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" fill="#009DE0">
@@ -52,7 +50,6 @@ const WelcomeUI = () => {
     )
   };
 
-  // Handle the "Next" button click.
   const handleNext = () => {
     if (!firstName.trim() || !lastName.trim()) {
       setError("Please fill in all fields before proceeding");
@@ -62,7 +59,6 @@ const WelcomeUI = () => {
     navigate("/housing");
   };
 
-  // Toggle selection for an option.
   const handleOptionClick = (id) => {
     if (selectedOptions.includes(id)) {
       setSelectedOptions(selectedOptions.filter((option) => option !== id));
@@ -71,7 +67,6 @@ const WelcomeUI = () => {
     }
   };
 
-  // The choices below will display under the "Tell us what is important for you" header.
   const choices = [
     {
       id: "payoff_debt",
