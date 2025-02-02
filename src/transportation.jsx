@@ -124,31 +124,31 @@ const TransportationUI = () => {
         </div>
         <div className="flex justify-between items-center mb-5">
           <div className="text-[42px] font-bold text-gray-800">Transportation</div>
-          <button onClick={() => navigate("/empty")} className="bg-sky-500 text-white py-2 px-5 border-none rounded-md cursor-pointer text-sm mt-0">
+          <button onClick={() => navigate("/empty")} className="bg-sky-500 text-white py-2 px-5 rounded-md cursor-pointer text-sm">
             Add
           </button>
         </div>
         <div className="h-[1px] bg-white mb-5"></div>
         <div className="mb-8">
           <div className="flex gap-[18px]">
-            <div className="mb-0 flex flex-col flex-1 min-w-0">
+            <div className="flex flex-col flex-1 min-w-0">
               <label className="text-sm mb-[7px] text-gray-600">Transportation Name</label>
               <input
                 type="text"
                 value={transportName}
                 onChange={(e) => setTransportName(e.target.value)}
-                className="py-2 px-2.5 border-none rounded-lg text-sm text-black bg-white w-full box-border"
+                className="py-2 px-2.5 border-none rounded-lg text-sm text-black bg-white w-full"
                 placeholder="Type an Answer"
               />
             </div>
-            <div className="mb-0 flex flex-col flex-1 min-w-0">
+            <div className="flex flex-col flex-1 min-w-0">
               <label className="text-sm mb-[7px] text-gray-600">Amount</label>
-              <div className="flex items-center border border-gray-300 rounded-md w-full box-border">
+              <div className="flex items-center border border-gray-300 rounded-md w-full">
                 <input
                   type="text"
                   value={transportAmount}
                   onChange={(e) => setTransportAmount(e.target.value)}
-                  className="py-2 px-2.5 border-none rounded-lg text-sm text-black bg-white flex-grow w-full box-border"
+                  className="py-2 px-2.5 border-none rounded-lg text-sm text-black bg-white flex-grow"
                   placeholder="0.00"
                 />
               </div>
@@ -156,13 +156,42 @@ const TransportationUI = () => {
           </div>
           {error && <div className="text-red-500 mt-2">{error}</div>}
         </div>
+        <div className="mb-[35px]">
+          <div className="text-2xl font-bold mb-[18px] text-gray-800">List</div>
+          <div className="bg-white py-3.5 px-5 rounded-md mb-2.5 flex justify-between items-center border border-gray-300">
+            <div className="text-xl text-gray-800 font-bold">Income</div>
+            <div className="flex items-center gap-1">
+              <div className="text-xl font-bold text-gray-800">$20,000.00</div>
+              <button className="bg-transparent border-none cursor-pointer p-1.5 ml-4">
+                <img 
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAAEAWj7AAAAACXBIWXMAAAsTAAALEwEAmpwYAAAApElEQVRImWNgGEhgYMhgAAA8IAgGBwYFBAUBjQwEDg8GAcRgYBBjYAgZggKGwGBj0GBgYGRoYJgcDAyMTA0h8GA8gJTAwMGkGYyBgsAgMTAzBkcDAyBQQCQAe/RgYWBiA4Wwg4GBicggwMKEAw0BgbCwM0jgcgYFxgmBgYHBg0DA4jIwMCzicDAwMLC4EwhxAaKzBAgwAP6ofm+MlSxoAAAAASUVORK5CYII=" 
+                  alt="delete" 
+                  className="w-3 h-3 opacity-60" 
+                />
+              </button>
+            </div>
+          </div>
+          <div className="bg-white py-3.5 px-5 rounded-md flex justify-between items-center border border-gray-300">
+            <div className="text-xl text-gray-800 font-bold">Sara Salary</div>
+            <div className="flex items-center gap-1">
+              <div className="text-xl font-bold text-gray-800">$20,000.00</div>
+              <button className="bg-transparent border-none cursor-pointer p-1.5 ml-4">
+                <img 
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAAEAWj7AAAAACXBIWXMAAAsTAAALEwEAmpwYAAAApElEQVRImWNgGEhgYMhgAAA8IAgGBwYFBAUBjQwEDg8GAcRgYBBjYAgZggKGwGBj0GBgYGRoYJgcDAyMTA0h8GA8gJTAwMGkGYyBgsAgMTAzBkcDAyBQQCQAe/RgYWBiA4Wwg4GBicggwMKEAw0BgbCwM0jgcgYFxgmBgYHBg0DA4jIwMCzicDAwMLC4EwhxAaKzBAgwAP6ofm+MlSxoAAAAASUVORK5CYII=" 
+                  alt="delete" 
+                  className="w-3 h-3 opacity-60" 
+                />
+              </button>
+            </div>
+          </div>
+        </div>
         <div className="flex justify-end mt-4">
           <Link to="/lifestyle" className="text-decoration-none">
             <button className="bg-transparent text-sky-500 py-2 px-5 border border-sky-500 rounded-md cursor-pointer text-sm mr-2.5">
               Skip
             </button>
           </Link>
-          <button onClick={handleNext} className="bg-sky-500 text-white py-2 px-5 border-none rounded-md cursor-pointer text-sm">
+          <button onClick={handleNext} className="bg-sky-500 text-white py-2 px-5 rounded-md cursor-pointer text-sm">
             Next
           </button>
         </div>

@@ -210,7 +210,7 @@ const LifestyleUI = () => {
             onClick={handleNext}
             className="bg-sky-500 text-white py-2 px-5 border-none rounded-md cursor-pointer text-sm"
           >
-            Next
+            Save and Start using Takalefy
           </button>
         </div>
       </div>

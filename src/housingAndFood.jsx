@@ -156,6 +156,35 @@ const HousingAndFoodUI = () => {
           </div>
           {error && <div className="text-red-500 mt-2">{error}</div>}
         </div>
+        <div className="mb-[35px]">
+          <div className="text-2xl font-bold mb-[18px] text-gray-800">List</div>
+          <div className="bg-white py-3.5 px-5 rounded-md mb-2.5 flex justify-between items-center border border-gray-300">
+            <div className="text-xl text-gray-800 font-bold">Income</div>
+            <div className="flex items-center gap-1">
+              <div className="text-xl font-bold text-gray-800">$20,000.00</div>
+              <button className="bg-transparent border-none cursor-pointer p-1.5 ml-4">
+                <img 
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAAEAWj7AAAAACXBIWXMAAAsTAAALEwEAmpwYAAAApElEQVRImWNgGEhgYMhgAAA8IAgGBwYFBAUBjQwEDg8GAcRgYBBjYAgZggKGwGBj0GBgYGRoYJgcDAyMTA0h8GA8gJTAwMGkGYyBgsAgMTAzBkcDAyBQQCQAe/RgYWBiA4Wwg4GBicggwMKEAw0BgbCwM0jgcgYFxgmBgYHBg0DA4jIwMCzicDAwMLC4EwhxAaKzBAgwAP6ofm+MlSxoAAAAASUVORK5CYII=" 
+                  alt="delete" 
+                  className="w-3 h-3 opacity-60" 
+                />
+              </button>
+            </div>
+          </div>
+          <div className="bg-white py-3.5 px-5 rounded-md flex justify-between items-center border border-gray-300">
+            <div className="text-xl text-gray-800 font-bold">Sara Salary</div>
+            <div className="flex items-center gap-1">
+              <div className="text-xl font-bold text-gray-800">$20,000.00</div>
+              <button className="bg-transparent border-none cursor-pointer p-1.5 ml-4">
+                <img 
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAAEAWj7AAAAACXBIWXMAAAsTAAALEwEAmpwYAAAApElEQVRImWNgGEhgYMhgAAA8IAgGBwYFBAUBjQwEDg8GAcRgYBBjYAgZggKGwGBj0GBgYGRoYJgcDAyMTA0h8GA8gJTAwMGkGYyBgsAgMTAzBkcDAyBQQCQAe/RgYWBiA4Wwg4GBicggwMKEAw0BgbCwM0jgcgYFxgmBgYHBg0DA4jIwMCzicDAwMLC4EwhxAaKzBAgwAP6ofm+MlSxoAAAAASUVORK5CYII=" 
+                  alt="delete" 
+                  className="w-3 h-3 opacity-60" 
+                />
+              </button>
+            </div>
+          </div>
+        </div>
         <div className="flex justify-end mt-4">
           <Link to="/transportation" className="text-decoration-none">
             <button className="bg-transparent text-sky-500 py-2 px-5 border border-sky-500 rounded-md cursor-pointer text-sm mr-2.5">
