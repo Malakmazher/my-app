@@ -132,8 +132,9 @@ const LifestyleUI = () => {
         </div>
 
         {/* Header */}
-        <div className="flex justify-start items-center mb-5">
-          <div className="text-[42px] font-bold text-gray-800">Lifestyle & Health</div>
+        <div className="flex justify-between items-center mb-5">
+            <div className="text-[42px] font-bold text-gray-800">Lifestyle & Health</div>
+            <button onClick={() => navigate("/empty")} className="bg-sky-500 text-white py-2 px-5 border-none rounded-md cursor-pointer text-sm mt-0">Add</button>
         </div>
 
         <div className="h-[1px] bg-white mb-5"></div>
