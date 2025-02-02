@@ -4,6 +4,9 @@ import { useNavigate, Link } from 'react-router-dom';
 const IncomeUI = () => {
   const navigate = useNavigate();
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [incomeName, setIncomeName] = useState('');
+  const [incomeAmount, setIncomeAmount] = useState('');
+  const [error, setError] = useState('');
 
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
@@ -20,6 +23,15 @@ const IncomeUI = () => {
     Housing: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" fill="#777"><path d="M20 7L9 0 2 4v16h20V7z"/></svg>,
     Transportation: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" fill="#777"><path d="M19 8l-3.92 0c-.11-.27-.19-.54-.28-.82l1.75-3.84c.07-.15.1-.32.1-.5 0-.55-.45-1-1-1H8.5c-.55 0-1 .45-1 1 0 .18.03.35.1.5l1.75 3.84c-.09.28-.17.55-.28.82L5 8 5 19h14L19 8zM6 18H6V9H5v9H6zm12 0H12V9h6v9H18z"/></svg>,
     Lifestyle: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" fill="#777"><path d="M12 21.35l-1.49-1.34C2.85 12.38 0 9.14 0 5.5A5.5 5.5 0 015.5 0C7.35 0 9.11.86 10.38 2.32L12 3.96l1.62-1.64C14.89.86 16.65 0 18.5 0A5.5 5.5 0 0124 5.5c0 3.64-2.85 6.88-10.51 14.51L12 21.35z"/></svg>
+  };
+
+  const handleNext = () => {
+    if (!incomeName.trim() || !incomeAmount.trim()) {
+      setError("Please fill in all fields before proceeding");
+      return;
+    }
+    setError("");
+    navigate("/housing");
   };
 
   return (
@@ -73,7 +85,7 @@ const IncomeUI = () => {
 
         <div className="flex justify-between items-center mb-5">
             <div className="text-[42px] font-bold text-gray-800">Income</div>
-            <button className="bg-sky-500 text-white py-2 px-5 border-none rounded-md cursor-pointer text-sm mt-0">Add</button>
+            <button onClick={() => navigate("/empty")} className="bg-sky-500 text-white py-2 px-5 border-none rounded-md cursor-pointer text-sm mt-0">Add</button>
         </div>
 
         <div className="h-[1px] bg-white mb-5"></div>
@@ -82,15 +94,28 @@ const IncomeUI = () => {
           <div className="flex gap-[18px]">
             <div className="mb-0 flex flex-col flex-1 min-w-0">
               <label className="text-sm mb-[7px] text-gray-600">Income Name</label>
-              <input type="text" className="py-2 px-2.5 border-none rounded-lg text-sm text-black bg-white w-full box-border" placeholder="Type an Answer" />
+              <input
+                type="text"
+                value={incomeName}
+                onChange={(e) => setIncomeName(e.target.value)}
+                className="py-2 px-2.5 border-none rounded-lg text-sm text-black bg-white w-full box-border"
+                placeholder="Type an Answer"
+              />
             </div>
             <div className="mb-0 flex flex-col flex-1 min-w-0">
               <label className="text-sm mb-[7px] text-gray-600">Amount</label>
               <div className="flex items-center border border-gray-300 rounded-md w-full box-border">
-                <input type="text" className="py-2 px-2.5 border-none rounded-lg text-sm text-black bg-white flex-grow w-full box-border" placeholder="0.00" />
+                <input
+                  type="text"
+                  value={incomeAmount}
+                  onChange={(e) => setIncomeAmount(e.target.value)}
+                  className="py-2 px-2.5 border-none rounded-lg text-sm text-black bg-white flex-grow w-full box-border"
+                  placeholder="0.00"
+                />
               </div>
             </div>
           </div>
+          {error && <div className="text-red-500 mt-2">{error}</div>}
         </div>
 
         <div className="mb-[35px]">
@@ -119,9 +144,7 @@ const IncomeUI = () => {
           <Link to="/housing" className="text-decoration-none">
             <button className="bg-transparent text-sky-500 py-2 px-5 border border-sky-500 rounded-md cursor-pointer text-sm mr-2.5">Skip</button>
           </Link>
-          <Link to="/housing" className="text-decoration-none">
-            <button className="bg-sky-500 text-white py-2 px-5 border-none rounded-md cursor-pointer text-sm">Next</button>
-          </Link>
+          <button onClick={handleNext} className="bg-sky-500 text-white py-2 px-5 border-none rounded-md cursor-pointer text-sm">Next</button>
         </div>
       </div>
     </div>
