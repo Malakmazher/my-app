@@ -10,6 +10,7 @@ import HousingAndFoodUI from './housingAndFood.jsx'
 import EmptyPage from './EmptyPage.jsx'
 import WelcomeUI from './welcome.jsx'
 import LifestyleUI from './lifestyle.jsx'
+import ContactForm from './ContactUs.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -23,6 +24,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/lifestyle" element={<LifestyleUI />} />
         <Route path="/empty" element={<EmptyPage />} />
         <Route path="/welcome" element={<WelcomeUI />} />
+        <Route path="/contact-us" element={<ContactForm />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
